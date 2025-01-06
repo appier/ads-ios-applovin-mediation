@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '12.0'
+
+target 'appier-applovin-ios-mediation_Example' do
+  pod 'appier-applovin-ios-mediation', :path => '../'
+
+  target 'appier-applovin-ios-mediation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
