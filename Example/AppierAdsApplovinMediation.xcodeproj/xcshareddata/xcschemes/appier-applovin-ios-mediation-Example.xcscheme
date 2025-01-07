@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "appier-applovin-ios-mediation_Example.app"
-               BlueprintName = "appier-applovin-ios-mediation_Example"
+               BuildableName = "AppierAdsApplovinMediation_Example.app"
+               BlueprintName = "AppierAdsApplovinMediation_Example"
                ReferencedContainer = "container:appier-applovin-ios-mediation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,29 +27,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6003F589195388D20070C39A"
+            BuildableName = "AppierAdsApplovinMediation_Example.app"
+            BlueprintName = "AppierAdsApplovinMediation_Example"
+            ReferencedContainer = "container:appier-applovin-ios-mediation.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6003F5AD195388D20070C39A"
-               BuildableName = "appier-applovin-ios-mediation_Tests.xctest"
-               BlueprintName = "appier-applovin-ios-mediation_Tests"
+               BuildableName = "AppierAdsApplovinMediation_Tests.xctest"
+               BlueprintName = "AppierAdsApplovinMediation_Tests"
                ReferencedContainer = "container:appier-applovin-ios-mediation.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "appier-applovin-ios-mediation_Example.app"
-            BlueprintName = "appier-applovin-ios-mediation_Example"
-            ReferencedContainer = "container:appier-applovin-ios-mediation.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -66,13 +64,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "appier-applovin-ios-mediation_Example.app"
-            BlueprintName = "appier-applovin-ios-mediation_Example"
+            BuildableName = "AppierAdsApplovinMediation_Example.app"
+            BlueprintName = "AppierAdsApplovinMediation_Example"
             ReferencedContainer = "container:appier-applovin-ios-mediation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -85,8 +81,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "appier-applovin-ios-mediation_Example.app"
-            BlueprintName = "appier-applovin-ios-mediation_Example"
+            BuildableName = "AppierAdsApplovinMediation_Example.app"
+            BlueprintName = "AppierAdsApplovinMediation_Example"
             ReferencedContainer = "container:appier-applovin-ios-mediation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

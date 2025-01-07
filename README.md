@@ -1,4 +1,4 @@
-# appier-applovin-ios-mediation
+# AppierAdsApplovinMediation
 
 [![CI Status](https://img.shields.io/travis/appier-ios-bot/appier-applovin-ios-mediation.svg?style=flat)](https://travis-ci.org/appier-ios-bot/appier-applovin-ios-mediation)
 [![Version](https://img.shields.io/cocoapods/v/appier-applovin-ios-mediation.svg?style=flat)](https://cocoapods.org/pods/appier-applovin-ios-mediation)
@@ -13,17 +13,17 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-appier-applovin-ios-mediation is available through [CocoaPods](https://cocoapods.org). To install
+AppierAdsApplovinMediation is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'appier-applovin-ios-mediation'
+pod 'AppierAdsApplovinMediation'
 ```
 
 ## Author
 
-appier-ios-bot, johnson.wang@appier.com
+Appier, appier-ssp-dev@appier.com
 
 ## License
 
-appier-applovin-ios-mediation is available under the MIT license. See the LICENSE file for more info.
+AppierAdsApplovinMediation is available under the MIT license. See the LICENSE file for more info.

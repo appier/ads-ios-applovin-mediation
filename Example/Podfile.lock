@@ -1,12 +1,12 @@
 PODS:
-  - appier-applovin-ios-mediation (1.0.0):
-    - AppierAds (~> 1.2)
-    - AppLovinSDK (>= 13.0.0)
   - AppierAds (1.2.1)
+  - AppierAdsApplovinMediation (1.0.0):
+    - AppierAds (~> 1.2.0)
+    - AppLovinSDK (>= 13.0.0)
   - AppLovinSDK (13.0.1)
 
 DEPENDENCIES:
-  - appier-applovin-ios-mediation (from `../`)
+  - AppierAdsApplovinMediation (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -14,14 +14,14 @@ SPEC REPOS:
     - AppLovinSDK
 
 EXTERNAL SOURCES:
-  appier-applovin-ios-mediation:
+  AppierAdsApplovinMediation:
     :path: "../"
 
 SPEC CHECKSUMS:
-  appier-applovin-ios-mediation: 69834670f4bddbbefc2a2c1cc17f70ccec53c73e
   AppierAds: 17a709512c66bd251ab7160324dda2e662636cfb
+  AppierAdsApplovinMediation: 9c65ccd0638e4da62cc590ce8fe5d2f41b4bd0a2
   AppLovinSDK: fdae6a4361c9c9b09f8d7d18ede792368221d987
 
-PODFILE CHECKSUM: d63405ac862e03273d773d3817a952ee4743e3ef
+PODFILE CHECKSUM: cec1ad2bbdd7d55c4da8f1108f1819e040ae58d4
 
 COCOAPODS: 1.15.2
