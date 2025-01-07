@@ -6,9 +6,13 @@
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
 
+require 'json'
+
+package = JSON.parse(File.read(File.join(__dir__, 'version_appier_ads_applovin_mediation_sdk.json')))
+
 Pod::Spec.new do |s|
   s.name         = 'AppierAdsApplovinMediation'
-  s.version      = '1.0.0'
+  s.version      = package['version'][1..-1]
   s.summary      = 'Applovin mediation for Appier Ads'
   s.homepage     = 'https://github.com/appier/appier-applovin-ios-mediation'
   s.license      = { :type => "MIT", :file => "LICENSE" }
