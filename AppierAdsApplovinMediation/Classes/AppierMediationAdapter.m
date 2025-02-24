@@ -172,20 +172,17 @@ static APRLogger *aprLogger;
     dispatchOnMainQueue(^{
         [self.aprNativeAd loadAd];
     });
-    
 }
 
 - (void)renderAPRNativeAd:(APRNativeAd *)nativeAd
                 andNotify:(id<MANativeAdAdapterDelegate>)delegate
 {
-    // `nativeAd` may be nil if the adapter is destroyed before the ad loaded (timed out).
     if (!nativeAd)
     {
         [delegate didFailToLoadNativeAdWithError: MAAdapterError.noFill];
         return;
     }
     
-    // Ensure UI rendering is done on main queue
     dispatchOnMainQueue(^{
         MANativeAd *maxNativeAd = [[MAAppierNativeAd alloc] initWithParentAdapter: self builderBlock:^(MANativeAdBuilder *builder) {
             builder.title = nativeAd.title;
@@ -379,42 +376,13 @@ static APRLogger *aprLogger;
         return NO;
     }
     
-    NSMutableArray *appierClickableViews = [NSMutableArray array];
+    NSMutableArray<UIView *> *appierClickableViews = [NSMutableArray array];
     [appierClickableViews addObjectsFromArray: clickableViews];
     [appierClickableViews addObject: self.mediaView];
     
-    // foreach clickable views, register click event
-    for (UIView *clickableView in appierClickableViews){
-        [clickableView setUserInteractionEnabled: YES];
-        [clickableView addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(onClickableViewClicked:)]];
-    }
+    [nativeAd bindAdViewInteractionsWithContainer:container privacyIconView:self.optionsView otherClickableViews:appierClickableViews];
     
-    // set click action for options view
-    if(self.optionsView){
-        [self.optionsView setUserInteractionEnabled: YES];
-        [self.optionsView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(onOptionsViewClicked:)]];
-    }
     return YES;
-}
-
-- (void)onClickableViewClicked:(UITapGestureRecognizer *)gestureRecognizer{
-    APRNativeAd *nativeAd = self.parentAdapter.aprNativeAd;
-    if (!nativeAd)
-    {
-        [aprLogger errorLog:@"Failed to handle click event: native ad is nil."];
-        return;
-    }
-    [nativeAd clickAdViewWithSender:gestureRecognizer];
-}
-
-- (void)onOptionsViewClicked:(UITapGestureRecognizer *)gestureRecognizer{
-    APRNativeAd *nativeAd = self.parentAdapter.aprNativeAd;
-    if (!nativeAd)
-    {
-        [aprLogger errorLog:@"Failed to handle click event for options view: native ad is nil."];
-        return;
-    }
-    [nativeAd clickPrivacyInformationViewWithSender:gestureRecognizer];
 }
 
 @end
