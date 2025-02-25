@@ -89,8 +89,6 @@ static APRLogger *aprLogger;
 - (void)initializeWithParameters:(id<MAAdapterInitializationParameters>)parameters completionHandler:(void (^)(MAAdapterInitializationStatus, NSString *_Nullable))completionHandler {
     [aprLogger debugLog:@"initializeWithParameters"];
     
-    // TEST ONLY
-    [APRAds shared].configuration.testMode = APRTestModeBid;
     [[APRAds shared] startWithCompletion:^(BOOL success) {
         if(success){
             [aprLogger debugLog:@"APRAds SDK initialized successfully"];
@@ -204,7 +202,6 @@ static APRLogger *aprLogger;
         [delegate didLoadAdForNativeAd: maxNativeAd withExtraInfo: nil];
     });
 }
-
 
 @end
 
@@ -361,8 +358,7 @@ static APRLogger *aprLogger;
 
 - (instancetype)initWithParentAdapter:(AppierMediationAdapter *)parentAdapter builderBlock:(NS_NOESCAPE MANativeAdBuilderBlock)builderBlock {
     self = [super initWithFormat: MAAdFormat.native builderBlock: builderBlock];
-    if (self)
-    {
+    if(self){
         self.parentAdapter = parentAdapter;
     }
     return self;
@@ -370,15 +366,17 @@ static APRLogger *aprLogger;
 
 - (BOOL)prepareForInteractionClickableViews:(NSArray<UIView *> *)clickableViews withContainer:(UIView *)container{
     APRNativeAd *nativeAd = self.parentAdapter.aprNativeAd;
-    if (!nativeAd)
-    {
+    if(!nativeAd){
         [aprLogger errorLog:@"Failed to register native ad views: native ad is nil."];
         return NO;
     }
     
     NSMutableArray<UIView *> *appierClickableViews = [NSMutableArray array];
     [appierClickableViews addObjectsFromArray: clickableViews];
-    [appierClickableViews addObject: self.mediaView];
+    
+    if(self.mediaView != nil){
+        [appierClickableViews addObject: self.mediaView];
+    }
     
     [nativeAd bindAdViewInteractionsWithContainer:container privacyIconView:self.optionsView otherClickableViews:appierClickableViews];
     
