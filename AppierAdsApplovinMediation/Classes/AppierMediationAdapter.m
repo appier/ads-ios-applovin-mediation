@@ -365,6 +365,11 @@ static APRLogger *aprLogger;
 }
 
 - (BOOL)prepareForInteractionClickableViews:(NSArray<UIView *> *)clickableViews withContainer:(UIView *)container{
+    if (!self.parentAdapter) {
+        [aprLogger errorLog:@"Failed to register native ad views: parent adapter is nil."];
+        return NO;
+    }
+    
     APRNativeAd *nativeAd = self.parentAdapter.aprNativeAd;
     if(!nativeAd){
         [aprLogger errorLog:@"Failed to register native ad views: native ad is nil."];
